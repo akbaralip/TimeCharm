@@ -101,9 +101,9 @@ WSGI_APPLICATION = 'aa_shopy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aa_shop_test',
-        'USER': 'postgres',
-        'PASSWORD': '6530',
+        'NAME': config("NAME"),
+        'USER': config("USER"),
+        'PASSWORD': config("PASSWORD"),
         'HOST': 'localhost',
     }
 }
