@@ -63,14 +63,14 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'aa_shopy.urls'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "http://13.51.72.44/",  
-     "http://0.0.0.0:9090",
+    "http://13.51.72.44",  
+    "http://0.0.0.0:9090",
     "http://ec2-13-53-35-242.eu-north-1.compute.amazonaws.com",
 ]
 
 # CSRF settings
 CSRF_TRUSTED_ORIGINS = [
-    "http://13.51.72.44/",
+    "http://13.51.72.44",
     "http://0.0.0.0:9090",
     "http://ec2-13-53-35-242.eu-north-1.compute.amazonaws.com",
     # Add more trusted origins here
