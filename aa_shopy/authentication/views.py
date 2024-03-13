@@ -40,7 +40,6 @@ def signin(request):
             request.session['user_pk'] = user.pk
        
 
-            print('===>', otp_store)
             subject = "OTP Confirmations"
             message = f"Your OTP is: {otp_store}"
             from_email = settings.EMAIL_HOST_USER
