@@ -14,7 +14,10 @@ SECRET_KEY = 'django-insecure-%x2on9ti+5=gg43paijb*&$hcmg3g$=r_9$623ek%6ku-wbgc0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']   
+# ALLOWED_HOSTS = ['*']   
+
+ALLOWED_HOSTS = ['13.51.72.44', '0.0.0.0', 'times.akbarali.shop', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://akbarali.shop', 'https://www.akbarali.shop', 'https://times.akbarali.shop', 'http://13.51.72.44']
 
 
 
@@ -51,20 +54,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'aa_shopy.urls'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://timecharm.akbarali.shop",
+    "https://times.akbarali.shop",
     "https://13.51.72.44",
     "http://0.0.0.0:9090",
     "http://ec2-13-53-35-242.eu-north-1.compute.amazonaws.com"
 ]
 
-# CSRF settings
-CSRF_TRUSTED_ORIGINS = [
-    "https://timecharm.akbarali.shop",
-    "https://13.51.72.44",
-    "http://0.0.0.0:9090",
-    "http://ec2-13-53-35-242.eu-north-1.compute.amazonaws.com"
-    # Add more trusted origins here
-]
 
 TEMPLATES = [
     {
@@ -85,8 +80,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'aa_shopy.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 #local database
 # DATABASES = {
