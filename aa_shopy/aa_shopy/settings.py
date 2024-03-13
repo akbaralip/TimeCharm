@@ -14,9 +14,8 @@ SECRET_KEY = 'django-insecure-%x2on9ti+5=gg43paijb*&$hcmg3g$=r_9$623ek%6ku-wbgc0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']   
-
-ALLOWED_HOSTS = ['13.51.72.44', '0.0.0.0', 'times.akbarali.shop', 'localhost']
+ALLOWED_HOSTS = ['*']   
+# ALLOWED_HOSTS = ['13.51.72.44', '0.0.0.0', 'times.akbarali.shop', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://akbarali.shop', 'https://www.akbarali.shop', 'https://times.akbarali.shop', 'http://13.51.72.44']
 
 
@@ -81,7 +80,7 @@ WSGI_APPLICATION = 'aa_shopy.wsgi.application'
 
 
 
-#local database
+# local database
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
