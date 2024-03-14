@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']   
 # ALLOWED_HOSTS = ['13.51.72.44', '0.0.0.0', 'times.akbarali.shop', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['https://akbarali.shop', 'https://www.akbarali.shop', 'https://times.akbarali.shop', 'http://16.16.217.142']
+CSRF_TRUSTED_ORIGINS = ['https://timecharm.akbarali.shop', 'https://www.timecharm.akbarali.shop', 'http://16.16.217.142']
 
 
 
@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'aa_shopy.urls'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://times.akbarali.shop",
+    "https://timecharm.akbarali.shop",
     "https://16.16.217.142",
     "http://0.0.0.0:9090",
     "http://ec2-13-53-35-242.eu-north-1.compute.amazonaws.com"
