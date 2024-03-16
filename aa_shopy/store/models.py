@@ -71,24 +71,24 @@ class Color(models.Model):
         return self.color
     
 class ProductVariant(models.Model):
-    product=models.ForeignKey(Product,on_delete=models.CASCADE)
-    color=models.ForeignKey(Color,on_delete=models.CASCADE)
-    store_price=models.DecimalField(max_digits=10,decimal_places=2, null=True, blank=True)
-    sale_price =models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    discount = models.DecimalField(max_digits=6, decimal_places=2, null=True)
-    discount_price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
-    model_name =models.CharField(max_length=100)
-    stock=models.PositiveIntegerField(default=0)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    color = models.ForeignKey(Color, on_delete=models.CASCADE)
+    store_price = models.PositiveIntegerField(null=True, blank=True)  # Change to PositiveIntegerField
+    sale_price = models.PositiveIntegerField(null=True)  # Change to PositiveIntegerField
+    discount = models.PositiveIntegerField(null=True)  # Change to PositiveIntegerField
+    discount_price = models.PositiveIntegerField(null=True)  # Change to PositiveIntegerField
+    model_name = models.CharField(max_length=100)
+    stock = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
-    slug=models.SlugField(blank=True,unique=True)
+    slug = models.SlugField(blank=True, unique=True)
 
     def __str__(self):
         return f"{self.product.name}-{self.color}"
-    
-    def save(self,*args, **kwargs):
+
+    def save(self, *args, **kwargs):
         if not self.slug:
-            slug_str=f"{self.product.name}-{self.color}"
-            self.slug=slugify(slug_str)
+            slug_str = f"{self.product.name}-{self.color}"
+            self.slug = slugify(slug_str)
         super().save(*args, **kwargs)
     
     
