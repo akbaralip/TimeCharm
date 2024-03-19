@@ -81,27 +81,27 @@ WSGI_APPLICATION = 'aa_shopy.wsgi.application'
 
 
 # local database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aa_shop_test',
-        'USER': 'postgres',
-        'PASSWORD': '6530',
-        'HOST': 'localhost',
-        "PORT":'5432'
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'myproject',
-#         'USER': 'myprojectuser',
-#         'PASSWORD': 'password',
+#         'NAME': 'aa_shop_test',
+#         'USER': 'postgres',
+#         'PASSWORD': '6530',
 #         'HOST': 'localhost',
 #         "PORT":'5432'
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        "PORT":'5432'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
