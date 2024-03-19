@@ -118,11 +118,11 @@ def forget_password(request):
         username = request.POST['username']
         try:
             user = User.objects.get(username=username)
-            # current_site = get_current_site(request)
+            current_site = get_current_site(request)
             esubject = "Confirm Your Email @ AA_SHOPY"
             message = render_to_string('user_profile/verify/pass_verify.html', {
                     'name': user.username,
-                    # 'domain': current_site.domain,
+                    'domain': current_site.domain,
                     'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                     'token': generate_token.make_token(user)
                 })
@@ -250,11 +250,11 @@ def signup(request):
                 send_mail(subject, message, from_email, to_list, fail_silently=True)
 
                 # Email Address Confirmation Email
-                # current_site = get_current_site(request)
+                current_site = get_current_site(request)
                 email_subject = "Confirm your email @ TimeCharm Login!!"
                 message2 = render_to_string('email_confirmation.html', {
                     'name': myuser.username,
-                    # 'domain': current_site.domain,
+                    'domain': current_site.domain,
                     'uid': urlsafe_base64_encode(force_bytes(myuser.pk)),
                     'token': generate_token.make_token(myuser)
                 })
