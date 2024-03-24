@@ -29,6 +29,7 @@ def test_user_signin(request):
     user = authenticate(username = username, password = pass1)
     if user is not None:
         login(request, user)
+        return redirect('home')
     else:
         messages.error(request, "Username or Password incorrect")  
         return redirect('signin')
