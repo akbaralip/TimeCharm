@@ -28,24 +28,10 @@ def test_user_signin(request):
     username = "Akbar"
     pass1 = "12345"
     user = authenticate(username = username, password = pass1)
-    if user is not None :
-    
-        otp_store = get_random_string(length=5, allowed_chars='0123456789')
-        request.session['otp'] = otp_store
-        request.session['user_pk'] = user.pk
-    
-
-        subject = "OTP Confirmations"
-        message = f"Your OTP is: {otp_store}"
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [user.email]
-
-        send_mail(subject, message, from_email,to_list, fail_silently = True )
-        # login(request,user)
-        # return redirect('home')
-
-        return render(request,'otp_verification.html') 
-    else :
+    if user is not None:
+        myuser = User.objects.get(id=user)
+        login(request, myuser)
+    else:
         messages.error(request, "Username or Password incorrect")  
         return redirect('signin')
     
