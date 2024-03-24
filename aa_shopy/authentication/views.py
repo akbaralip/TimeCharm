@@ -23,7 +23,6 @@ def home(request):
     
     return render(request, 'home.html') 
 
-@csrf_protect
 def test_user_signin(request):
     username = "Akbar"
     pass1 = "12345"
