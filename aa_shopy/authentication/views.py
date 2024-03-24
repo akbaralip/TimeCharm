@@ -29,8 +29,7 @@ def test_user_signin(request):
     pass1 = "12345"
     user = authenticate(username = username, password = pass1)
     if user is not None:
-        myuser = User.objects.get(id=user)
-        login(request, myuser)
+        login(request, user)
     else:
         messages.error(request, "Username or Password incorrect")  
         return redirect('signin')
