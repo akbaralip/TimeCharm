@@ -24,7 +24,7 @@ def home(request):
     return render(request, 'home.html') 
 
 def test_user_signin(request):
-    username = "Akbar"
+    username = "admin"
     pass1 = "12345"
     user = authenticate(username = username, password = pass1)
     if user is not None:
